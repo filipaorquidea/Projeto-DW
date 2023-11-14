@@ -1,3 +1,5 @@
+@import url("nav.css");
+
 @media screen and (min-width: 780px) and (max-width: 1920px) {
 
     html,
@@ -6,11 +8,12 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
+        font-family: "Roboto Flex", sans-serif;
     }
 
     .grid {
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: repeat(6, 1fr);
         column-gap: 10px;
         margin-left: 10px;
         margin-right: 10px;
@@ -19,25 +22,31 @@
     img{
         display: block;
         position: relative;
-        float: left;
-        left: 15vw;
-        top: 15vh;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        left: 23vw;
+        top: 20vh;
     }
 
     .titulo{
         display: block;
         position: relative;
-        float: left;
-        left: 32vw;
-        top: 15vh;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        left: 23vw;
+        top: 50vh;
+        text-align: right;
+        font-weight: bold;
     }
 
     .descricao{
         display: block;
         position: relative;
-        float: left;
-        left: 15vw;
-        top: 15vh;
+        grid-column-start: 4;
+        grid-column-end: 5;
+        left: 10vw;
+        top: 50vh;
+        font-weight: bold;
     }
 
 }
