@@ -9,18 +9,25 @@
 
   .topnav input{
     position: absolute;
-    right: 10vh;
-    top: 7vh;
+    right: 25vh;
+    top: 6vh;
+    width: 30vh;
+    height:5vh;
+    border: black solid 4px;
   }
 
   .filtros img{
     position: absolute;
     display: inline-block;
-    right: 20vh;
+    right: 15vh;
     top:7vh;
-
+    width: 5vh;
+    height: 5vh;
   }
 
+  .filtros img:last-child{
+    right: 7vh;
+  }
 
   #logo{
     width:200px;
