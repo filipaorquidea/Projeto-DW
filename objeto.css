@@ -45,18 +45,19 @@
     grid-column-start: 4;
     grid-column-end: 5;
     left: 10vw;
-    bottom: 20vh;
+    top: 50vh;
     font-weight: bold;
   }
 
-  /* Popup container */
+  
+  /* Popup container 
   .popup {
     position: relative;
     display: inline-block;
     cursor: pointer;
   }
 
-  /* The actual popup (appears on top) */
+   The actual popup (appears on top) 
   .popup .popuptext {
     visibility: hidden;
     width: 160px;
@@ -72,7 +73,7 @@
     margin-left: -80px;
   }
 
-  /* Popup arrow */
+  Popup arrow 
   .popup .popuptext::after {
     content: "";
     position: absolute;
@@ -84,14 +85,14 @@
     border-color: #555 transparent transparent transparent;
   }
 
-  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+   Toggle this class when clicking on the popup container (hide and show the popup) 
   .popup .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s
   }
 
-  /* Add animation (fade in the popup) */
+   Add animation (fade in the popup) 
   @-webkit-keyframes fadeIn {
     from {
       opacity: 0;
@@ -110,5 +111,5 @@
     to {
       opacity: 1;
     }
-  }
+  }*/
 }
