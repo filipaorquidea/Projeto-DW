@@ -1,8 +1,9 @@
 @import url("nav.css");
 @media screen and (min-width: 780px) and (max-width: 1920px) {
-
+    
     html,
     body {
+        font-family: 'Roboto', sans-serif;
         display: contents;
         width: 100%;
         height: 100%;
@@ -24,16 +25,18 @@
         float: right;
         grid-column-start: 2;
         grid-column-end: 3;
-        top: 18vh;
+        left: 8.7vw;
+        top: 14vh;
     }
-
+    
     .criadores{
         display: block;
         position: relative;
         float: right;
+        text-align:right;
         grid-column-start: 2;
         grid-column-end: 3;
-        top: 20vh;
+        top: 14vh;
     }
 
     .fotos_1{
@@ -43,7 +46,7 @@
         grid-column-start:3;
         grid-column-end:4;
         right: 1vw;
-        top: 10vh;
+        top: 2vh;
         margin-top: 5vh;
     }
 
@@ -54,7 +57,7 @@
         grid-column-start:4;
         grid-column-end:5;
         left: 1vw;
-        top: 10vh;
+        top: 2vh;
         margin-top: 5vh;
     }
     
@@ -65,7 +68,7 @@
         grid-column-start: 4;
         grid-column-end: 6;
         left: 1vw;
-        bottom: 17vh;
+        bottom:28vh;
 
     }
 
