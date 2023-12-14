@@ -1,77 +1,29 @@
 @import url("nav.css");
 
-.gridarq {
-    padding-top: 120px;
+.grid{
+    padding-top: 15%;
     display: grid;
-    grid-template-columns: 6 1fr;
-    grid-template-rows: 3 1fr;
+    grid-template-columns: auto auto auto auto auto auto;
     column-gap: 15px;
     row-gap:15px;
     margin-left: 10px;
     margin-right: 10px;
+    
 }
 
-
-.container-1{
+.container{
     top:0;
     left: 0;
     display: block;
     position: relative;
-    width: 100%;
-    height: 100%;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    max-height:100%;
+    max-width:100%;
 }
 
-div[class *= "container-"] img{
+div[class = "container"] img{
     display:block;
     position: relative;
-    width: 80%;
-    height: auto;
-    margin: 10%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.container-2{
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
-
-.container-3{
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    grid-column-start: 3;
-    grid-column-end: 4;
-}
-
-.container-4{
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    grid-column-start: 4;
-    grid-column-end: 5;
-}
-
-.container-5{
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    grid-column-start: 5;
-    grid-column-end: 6;
-}
-
-.container-6{
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    grid-column-start: 6;
-    grid-column-end: 6;
-}
