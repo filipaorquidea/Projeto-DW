@@ -27,7 +27,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             async function fetchProjectsJSON() {
-                const response = await fetch('https://api.cosmicjs.com/v3/buckets/deep-strange-web-production/objects?pretty=true&query=%7B%22type%22:%22images%22%7D&limit=10&skip=20&read_key=UaK6ewXkTXExUTsdEZU6sQiFdljWaO4azEp5fE9FfUX7T41VnH&depth=1&props=slug,title,metadata,id');
+                const response = await fetch('https://api.cosmicjs.com/v3/buckets/deep-strange-web-production/objects?pretty=true&query=%7B%22type%22:%22images%22%7D&read_key=UaK6ewXkTXExUTsdEZU6sQiFdljWaO4azEp5fE9FfUX7T41VnH&depth=1&props=slug,title,metadata,id');
                 const projects = await response.json();
                 return projects.objects;
             }
@@ -37,8 +37,9 @@
 
                 const grid = document.querySelector('.grid');
                 for (let i = 0; i < projects.length; i++) {
-                    const objectIcon = projects[i].metadata.icon.url; // Assuming the URL of the image is in the 'icon' property of the metadata
+                    const objectIcon = projects[i].metadata && projects[i].metadata.imagem !== null ? projects[i].metadata.imagem.url : ''; // Assuming the URL of the image is in the 'icon' property of the metadata
                     const objectId = projects[i].id;
+                    console.log(i);
                     const link = `objeto.html?id=${objectId}`;
 
                     grid.insertAdjacentHTML('beforeend', `<div class="container"> <a href="${link}"><img src="${objectIcon}" alt="Project Image"></a></div>`);
