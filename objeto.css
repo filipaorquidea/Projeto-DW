@@ -28,7 +28,7 @@
     top: 20vh;
   }
 
-  .titulo {
+  .caracteristicas {
     display: block;
     position: relative;
     grid-column-start: 1;
