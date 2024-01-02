@@ -23,7 +23,7 @@
 
   .topnav input{
     position: absolute;
-    right: 25vh;
+    right: 37vh;
     top: 6vh;
     width: 30vh;
     height:5vh;
@@ -33,15 +33,25 @@
   .filtros img{
     position: absolute;
     display: inline-block;
-    right: 15vh;
+    right:14vw;
     top:7vh;
-    width: 5vh;
+    width: 2.5vw;
     height: 5vh;
   }
 
-  .filtros img:last-child{
-    right: 7vh;
+  .filtros select{
+    position: absolute;
+    display: inline-block;
+    right:3vw;
+    top:7vh;
+    width: 10vw;
+    height: 5vh;
+    border: none;
+    background-color: transparent;
+    font-size: 15pt;
+    font-weight: bold;
   }
+
 
   #logo{
     width:200px;

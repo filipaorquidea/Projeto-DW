@@ -1,9 +1,10 @@
 @import url("nav.css");
 
+
 .grid{
-    padding-top: 15%;
+    padding-top: 10%;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     column-gap: 15px;
     row-gap:15px;
     margin-left: 10px;
@@ -25,5 +26,7 @@ div[class = "container"] img{
     position: relative;
     max-width: 100%;
     max-height: 100%;
+    object-position: center;
+
 }
 

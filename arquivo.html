@@ -11,21 +11,24 @@
 <body>
 
     <!-- Navigation bar -->
-    <div id="nav-placeholder"></div>
+    <div id="nav-placeholder">
+    </div>
 
     <script>
         $(function () {
             $("#nav-placeholder").load("nav.html");
         });
     </script>
+    <iframe src="nav.html" frameborder="0" style="display: none;"></iframe>
     <!-- End of Navigation bar -->
 
+
     <div class="grid">
-        
+
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             async function fetchProjectsJSON() {
                 const response = await fetch('https://api.cosmicjs.com/v3/buckets/deep-strange-web-production/objects?pretty=true&query=%7B%22type%22:%22images%22%7D&read_key=UaK6ewXkTXExUTsdEZU6sQiFdljWaO4azEp5fE9FfUX7T41VnH&depth=1&props=slug,title,metadata,id');
                 const projects = await response.json();
@@ -39,13 +42,35 @@
                 for (let i = 0; i < projects.length; i++) {
                     const objectIcon = projects[i].metadata && projects[i].metadata.imagem !== null ? projects[i].metadata.imagem.url : ''; // Assuming the URL of the image is in the 'icon' property of the metadata
                     const objectId = projects[i].id;
+                    const title = projects[i].title;
                     console.log(i);
                     const link = `objeto.html?id=${objectId}`;
 
-                    grid.insertAdjacentHTML('beforeend', `<div class="container"> <a href="${link}"><img src="${objectIcon}" alt="Project Image"></a></div>`);
+                    grid.insertAdjacentHTML('beforeend', `<div class="container" title = "${title}"> <a href="${link}"><img src="${objectIcon}" alt="Project Image"></a></div>`);
                 }
+
+                //SEARCH BAR - INCOMPLETO, NOT WORKING ATM
+                const searchBar = document.forms['search'].querySelector('input');
+                const nome = document.getElementsByClassName("container").title;
+
+                searchBar.addEventListener('keyup', function (e) {
+                    const search = e.target.value.toLowerCase();
+
+                    Array.from(nome).forEach(function (obj) {
+                        const titulo = obj.firstElementChild.title;
+                        if (obj.toLowerCase().indexOf(search) != -1) {
+                            obj.style.display = 'block';
+                        } else {
+                            obj.style.display = 'none';
+                        }
+                    })
+
+                })
             });
+
         });
+
+
     </script>
 
 </body>
