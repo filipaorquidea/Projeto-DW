@@ -6,8 +6,7 @@
     <title>Objeto</title>
     <link rel="stylesheet" href="objeto.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="objeto.js"></script>
-    
+
 </head>
 
 <body>
@@ -20,42 +19,41 @@
     </script>
     <!--end of Navigation bar-->
 
-  
+
     <div class="grid">
 
         <div class="caracteristicas">
-           
+
         </div>
-        
 
         <div class="image-container">
-            
         </div>
-        <div class="descricao"> 
-            <text>Descrição</text> </div>
+        <div class="descricao">
+            <text>Descrição</text>
+        </div>
 
     </div>
 
     <script>
-        
+
         let url = new URL(window.location);
         let params = new URLSearchParams(url.search);
         let id = params.get("id");
 
         async function fetchProjectJSON(id) {
-            const response = await fetch("https://api.cosmicjs.com/v3/buckets/deep-strange-web-production/objects/"+id+"?read_key=UaK6ewXkTXExUTsdEZU6sQiFdljWaO4azEp5fE9FfUX7T41VnH&depth=1&props=slug,title,metadata,");
+            const response = await fetch("https://api.cosmicjs.com/v3/buckets/deep-strange-web-production/objects/" + id + "?read_key=UaK6ewXkTXExUTsdEZU6sQiFdljWaO4azEp5fE9FfUX7T41VnH&depth=1&props=slug,title,metadata,");
             const project = await response.json();
             return project.object;
         }
 
         fetchProjectJSON(id).then(project => {
-            console.log(project); // fetched movies
+            console.log(project); // fetched project
 
             const objectIcon = project.metadata && project.metadata.imagem !== null ? project.metadata.imagem.url : '';
 
             // Display the image on the page
             const imageContainer = document.querySelector('.image-container');
-            imageContainer.innerHTML = `<img src="${objectIcon}" alt="Project Image" width="300" height="500" class="img1">`;
+            imageContainer.innerHTML = `<img src="${objectIcon}" alt="Project Image" width="300" height="500" class="img1" onclick="openImagePopup('${objectIcon}')">`;
 
             // Update the content of 'descricao' with metadata.legenda
             const descricaoElement = document.querySelector('.descricao');
@@ -63,14 +61,40 @@
             descricaoElement.insertAdjacentHTML('beforeend', `<div class=legenda><text>` + legenda + `</text></div>`);
 
             const caracteristicasElement = document.querySelector('.caracteristicas');
-            const titulo = project && project.title ? project.title: 'Titulo';
-            const ano = project.metadata && project.metadata.ano ? project.metadata.ano: 'Ano Desconhecido';
-            const local = project.metadata && project.metadata.local ? project.metadata.local: 'Local Desconhecido';
+            const titulo = project && project.title ? project.title : 'Titulo';
+            const ano = project.metadata && project.metadata.ano ? project.metadata.ano : 'Ano Desconhecido';
+            const local = project.metadata && project.metadata.local ? project.metadata.local : 'Local Desconhecido';
             caracteristicasElement.insertAdjacentHTML('beforeend', `<div class=titulo><text>` + titulo + `</text></div>`);
             caracteristicasElement.insertAdjacentHTML('beforeend', `<div class=ano><text>` + ano + `</text></div>`);
             caracteristicasElement.insertAdjacentHTML('beforeend', `<div class=local><text>` + local + `</text></div>`);
         });
-        
+
+        function openImagePopup(imageUrl) {
+            // Check if the popup is already open
+            const existingPopup = document.querySelector('.image-popup');
+            if (existingPopup) {
+                // Close the existing popup or prevent opening a new one
+                return;
+            }
+
+            // Create a popup element
+            const popup = document.createElement('div');
+            popup.className = 'image-popup';
+            popup.innerHTML = `<span class="close-btn" onclick="closeImagePopup()">&times;</span>
+                               <img src="${imageUrl}" alt="Popup Image" width="300" height="500" class="popup-img">`;
+
+            // Append the popup to the body
+            document.body.appendChild(popup);
+        }
+
+        // Close the popup when the close button is clicked
+        function closeImagePopup() {
+            const popup = document.querySelector('.image-popup');
+            if (popup) {
+                document.body.removeChild(popup);
+            }
+        }
+
     </script>
 
 </body>
