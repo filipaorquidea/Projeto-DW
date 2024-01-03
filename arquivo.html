@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+    <iframe src="nav.html" frameborder="0" style="display: none;"></iframe>
     <!-- Navigation bar -->
     <div id="nav-placeholder">
     </div>
@@ -19,8 +19,7 @@
             $("#nav-placeholder").load("nav.html");
         });
     </script>
-    <iframe src="nav.html" frameborder="0" style="display: none;"></iframe>
-    <!-- End of Navigation bar -->
+       <!-- End of Navigation bar -->
 
 
     <div class="grid">
@@ -46,12 +45,13 @@
                     console.log(i);
                     const link = `objeto.html?id=${objectId}`;
 
-                    grid.insertAdjacentHTML('beforeend', `<div class="container" title = "${title}"> <a href="${link}"><img src="${objectIcon}" alt="Project Image"></a></div>`);
+                    grid.insertAdjacentHTML('beforeend', `<div class="container" title = "${title}"> <a href="${link}"><img src="${objectIcon}" alt="Project Image"><p>${title}</a></div>`);
                 }
 
                 //SEARCH BAR - INCOMPLETO, NOT WORKING ATM
                 const searchBar = document.forms['search'].querySelector('input');
                 const nome = document.getElementsByClassName("container").title;
+                console.log(nome);
 
                 searchBar.addEventListener('keyup', function (e) {
                     const search = e.target.value.toLowerCase();

@@ -4,7 +4,7 @@
 .grid{
     padding-top: 10%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns:repeat(6, 1fr);
     column-gap: 15px;
     row-gap:15px;
     margin-left: 10px;
@@ -19,14 +19,24 @@
     position: relative;
     max-height:100%;
     max-width:100%;
+    height: 35vh;
+    margin-bottom: 5%;
 }
 
 div[class = "container"] img{
     display:block;
     position: relative;
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+   height: 90%;
     object-position: center;
+    object-fit: cover;
+}
 
+.container a{
+    font-size: 10pt;
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
 }
 

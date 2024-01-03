@@ -29,8 +29,9 @@
         <div class="image-container">
         </div>
         <div class="descricao">
-            <text>Descrição</text>
+            <text><b>Descrição</b></text>
         </div>
+
 
     </div>
 
@@ -80,8 +81,11 @@
             // Create a popup element
             const popup = document.createElement('div');
             popup.className = 'image-popup';
-            popup.innerHTML = `<span class="close-btn" onclick="closeImagePopup()">&times;</span>
-                               <img src="${imageUrl}" alt="Popup Image" width="300" height="500" class="popup-img">`;
+            popup.innerHTML = ` <input type="checkbox" id="zoomCheck">
+                                 <span class="close-btn" onclick="closeImagePopup()">&times;</span>
+                                 <label for="zoomCheck">
+                               <img src="${imageUrl}" alt="Popup Image" width="300" height="500" class="popup-img">
+                               </label>`;
 
             // Append the popup to the body
             document.body.appendChild(popup);
