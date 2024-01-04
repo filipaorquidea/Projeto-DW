@@ -1,7 +1,7 @@
 @media screen and (min-width: 768px) {
   
-  /* Navigation Bar */
-  .topnav {
+   /* Navigation Bar */
+   .topnav {
     overflow: hidden;
     position: fixed;
     background-color: white;
@@ -62,10 +62,6 @@
   #logo {
     width: 200px;
     height: 120px;
-  }
-
-  .hide {
-    display: none;
   }
 
   /* End of Navigation Bar */
