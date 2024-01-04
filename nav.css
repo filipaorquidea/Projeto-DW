@@ -1,5 +1,5 @@
-
-
+@media screen and (min-width: 768px) {
+  
   /* Navigation Bar */
   .topnav {
     overflow: hidden;
@@ -32,13 +32,17 @@
     border: black solid 4px;
   }
 
-  .filtros img {
+  .filtros button {
     position: absolute;
     display: inline-block;
     right: 14vw;
     top: 7vh;
     width: 2.5vw;
     height: 5vh;
+    background-color: transparent;
+    border: none;
+    background-image: url("imagens/ordem.png");
+    background-size: cover;
   }
 
   .filtros select {
@@ -60,4 +64,79 @@
     height: 120px;
   }
 
+  .hide {
+    display: none;
+  }
+
   /* End of Navigation Bar */
+}
+
+@media screen and (max-width: 767px) {
+
+  .topnav {
+    overflow: hidden;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+  }
+
+  .pagina {
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+    text-decoration: none;
+    color: black;
+    bottom: 30px;
+  }
+
+  .topnav input {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    width: 20vh;
+    border: black solid 2px;
+  }
+
+  .filtros img {
+    position: absolute;
+    display: inline-block;
+    right: 80px;
+    width: 2.5vw;
+    height: 3vh;
+  }
+
+  .filtros button {
+    position: absolute;
+    display: inline-block;
+    right: 20vw;
+    top: 15px;
+    width: 2vw;
+    height: 2vh;
+    background-color: transparent;
+    border: none;
+    background-image: url("imagens/ordem.png");
+    background-size: cover;
+  }
+
+  .filtros select {
+    position: absolute;
+    display: inline-block;
+    right: 8vw;
+    top: 7px;
+    width: 12vw;
+    height: 5vh;
+    border: none;
+    background-color: transparent;
+    font-size: 8pt;
+    font-weight: bold;
+  }
+
+  #logo {
+    width: 30%;
+    height: 12%;
+  }
+  
+}

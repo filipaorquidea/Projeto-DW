@@ -1,5 +1,7 @@
 @import url("nav.css");
 
+@media screen and (min-width: 768px) {
+
     html,
     body {
         font-family: 'Roboto', sans-serif;
@@ -70,3 +72,20 @@
         bottom: 28vh;
 
     }
+}
+
+@media screen and (max-width: 767px) {
+
+    html,
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .grid {
+        display: block;
+        position: relative;
+        height: 10px;
+        top: 160px;
+    }
+
+}
