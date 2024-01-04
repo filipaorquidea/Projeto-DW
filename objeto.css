@@ -115,57 +115,49 @@
 
   .grid {
     display: block;
+    position: relative;
     text-align: center;
     margin: 0;
     height: 10px;
+    top: 170px;
   }
 
   .img1 {
-    width: 60%;
-    position: relative;
-    object-fit: contain;
+    width: 50%;
+    height: auto;
+    top: 100px;
   }
 
   .caracteristicas {
-    top: 0;
+    width: auto;
+    font-size: 16px;
   }
 
   .descricao {
     width: auto;
-    position: relative;
-    bottom: 20px;
+    top: 60px;
     text-align: left;
     margin: 10px;
   }
 
   .titulo {
-    position: relative;
     font-size: 20px;
     font-weight: bold;
-    top: 70px;
-  }
-
-  .ano,
-  .local {
-    width: auto;
-    position: relative;
-    text-align: left;
-    margin: 10px;
+    bottom: 50px;
   }
 
   .back {
-    display: block;
     position: relative;
-    top: 670px;
+    top: 105vh;
     left: 35%;
   }
 
   .image-popup {
     position: fixed;
-    top: 100vw;
-    left: 50vw;
-    width: 70vw;
-    height: 60vh;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 60%;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.8);
     padding: 20px;
@@ -176,8 +168,8 @@
   }
 
   .popup-img {
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
     transition: transform 0.25s ease;
     cursor: zoom-in;
   }

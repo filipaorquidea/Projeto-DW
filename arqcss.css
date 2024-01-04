@@ -1,56 +1,56 @@
 @import url("nav.css");
 
 @media screen and (min-width: 768px) {
-.grid{
+  .grid {
     padding-top: 10%;
     display: grid;
-    grid-template-columns:repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     column-gap: 15px;
-    row-gap:15px;
+    row-gap: 15px;
     margin-left: 10px;
     margin-right: 10px;
-    
-}
 
-.container{
-    top:0;
+  }
+
+  .container {
+    top: 0;
     left: 0;
     display: block;
     position: relative;
-    max-height:100%;
-    max-width:100%;
+    max-height: 100%;
+    max-width: 100%;
     height: 35vh;
     margin-bottom: 5%;
-}
+  }
 
-div[class = "container"] img{
-    display:block;
+  div[class="container"] img {
+    display: block;
     position: relative;
     width: 100%;
-   height: 90%;
+    height: 90%;
     object-position: center;
     object-fit: cover;
-}
+  }
 
-.container a{
+  .container a {
     font-size: 10pt;
     text-decoration: none;
     color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
-}
+  }
 
-/* Navigation Bar */
-.topnav {
+  /* Navigation Bar */
+  .topnav {
     overflow: hidden;
     position: fixed;
     background-color: white;
     width: 100%;
     z-index: 1;
-    top:0;
+    top: 0;
   }
 
-  .pagina{
+  .pagina {
     display: inline-block;
     position: relative;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -63,20 +63,20 @@ div[class = "container"] img{
   }
 
 
-  .topnav input{
+  .topnav input {
     position: absolute;
     right: 37vh;
     top: 6vh;
     width: 30vh;
-    height:5vh;
+    height: 5vh;
     border: black solid 4px;
   }
 
-  .filtros button{
+  .filtros button {
     position: absolute;
     display: inline-block;
-    right:14vw;
-    top:7vh;
+    right: 14vw;
+    top: 7vh;
     width: 2.5vw;
     height: 5vh;
     background-color: transparent;
@@ -85,11 +85,11 @@ div[class = "container"] img{
     background-size: cover;
   }
 
-  .filtros select{
+  .filtros select {
     position: absolute;
     display: inline-block;
-    right:3vw;
-    top:7vh;
+    right: 3vw;
+    top: 7vh;
     width: 10vw;
     height: 5vh;
     border: none;
@@ -99,30 +99,56 @@ div[class = "container"] img{
   }
 
 
-  #logo{
-    width:200px;
-    height:120px;
+  #logo {
+    width: 200px;
+    height: 120px;
   }
 
-  .hide{
-    display:none;
+  .hide {
+    display: none;
   }
-/* End of Navigation Bar */
+
+  /* End of Navigation Bar */
 
 }
 
 @media screen and (max-width: 767px) {
   .grid {
-      grid-template-columns: repeat(3, 1fr);
-      column-gap: 5px;
-      row-gap: 2px;
-      padding-top: 30%;
-      margin-left: 5px;
-      margin-right: 5px;
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    top: 190px;
   }
 
   .container {
-      height: 50%; 
-      margin-bottom: 1%; 
+    top: 0;
+    left: 0;
+    display: block;
+    position: relative;
+    max-height: 100%;
+    max-width: 100%;
+    height: 50%;
+    margin-bottom: 5%;
+  }
+
+  div[class="container"] img {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 90%;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  .container a {
+    font-size: 10pt;
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
   }
 }
