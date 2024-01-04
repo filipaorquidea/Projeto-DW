@@ -6,19 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Objeto</title>
     <link rel="stylesheet" href="objeto.css">
+    <link rel="stylesheet" href="nav.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 </head>
 
 <body>
-    <!--Navigation bar-->
-    <div id="nav-placeholder"></div>
-    <script>
-        $(function () {
-            $("#nav-placeholder").load("nav.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
+    <nav>
+        <div class="topnav">
+            <a href="index.html"><img id="logo" src="imagens/logo.png"></a>
+            <a href="arquivo.html" class="pagina">ARQUIVO</a>
+            <a href="sobre.html" class="pagina">SOBRE</a>
+            <form id="search">
+                <input type="text" placeholder="Search..">
+                <div class="filtros">
+                    <select>
+                        <option class="choice" onclick="filter('all')">All</option>
+                        <option class="choice" onclick="filter('Porto')">Porto</option>
+                        <option class="choice" onclick="filter('Évora')">Évora</option>
+                        <option class="choice" onclick="filter('Coimbra')">Coimbra</option>
+                        <option class="choice" onclick="filter('Herdados')">Herdados</option>
+                        <option class="choice" onclick="filter('Criados')">Criados</option>
+                        <option class="choice" onclick="filter('Ilegais')">Ilegais</option>
+                        <option class="choice" onclick="filter('Roubados')">Roubados</option>
+                        <option class="choice" onclick="filter('Achados')">Achados</option>
+                        <option class="choice" onclick="filter('Placas')">Placas</option>
+                        <option class="choice" onclick="filter('Comida')">Comida</option>
+                        <option class="choice" onclick="filter('Decoração')">Decoração</option>
+                        <option class="choice" onclick="filter('Animais')">Animais</option>
+                        <option class="choice" onclick="filter('Sinais-Transito')">Sinais Transito</option>
+                    </select>
+                    <button type="button" class="sort"></button>
+                </div>
+            </form>
+        </div>
+    </nav>
 
 
     <div class="grid">
@@ -32,11 +54,9 @@
         <div class="descricao">
             <text><b>Descrição</b></text>
         </div>
-
+        <img class="back" src="imagens/pngwing 1.png" onclick="goBack()">
 
     </div>
-
-    <img class="back" src="imagens/pngwing 1.png" onclick="goBack()">
 
     <script>
 
@@ -73,7 +93,7 @@
             caracteristicasElement.insertAdjacentHTML('beforeend', `<div class=ano><text>` + ano + `</text></div>`);
             caracteristicasElement.insertAdjacentHTML('beforeend', `<div class=local><text>` + local + `</text></div>`);
         });
-       
+
         function openImagePopup(imageURL) {
 
             // Check if the popup is already open
