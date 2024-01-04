@@ -40,3 +40,71 @@ div[class = "container"] img{
     font-weight: bold;
 }
 
+/* Navigation Bar */
+.topnav {
+    overflow: hidden;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+    top:0;
+  }
+
+  .pagina{
+    display: inline-block;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 18pt;
+    text-decoration: none;
+    color: black;
+    bottom: 5vh;
+    padding: 1%;
+  }
+
+
+  .topnav input{
+    position: absolute;
+    right: 37vh;
+    top: 6vh;
+    width: 30vh;
+    height:5vh;
+    border: black solid 4px;
+  }
+
+  .filtros button{
+    position: absolute;
+    display: inline-block;
+    right:14vw;
+    top:7vh;
+    width: 2.5vw;
+    height: 5vh;
+    background-color: transparent;
+    border: none;
+    background-image: url("imagens/ordem.png");
+    background-size: cover;
+  }
+
+  .filtros select{
+    position: absolute;
+    display: inline-block;
+    right:3vw;
+    top:7vh;
+    width: 10vw;
+    height: 5vh;
+    border: none;
+    background-color: transparent;
+    font-size: 15pt;
+    font-weight: bold;
+  }
+
+
+  #logo{
+    width:200px;
+    height:120px;
+  }
+
+  .hide{
+    display:none;
+  }
+/* End of Navigation Bar */

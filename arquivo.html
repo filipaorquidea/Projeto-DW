@@ -9,17 +9,35 @@
 </head>
 
 <body>
-    <iframe src="nav.html" frameborder="0" style="display: none;"></iframe>
-    <!-- Navigation bar -->
-    <div id="nav-placeholder">
-    </div>
-
-    <script>
-        $(function () {
-            $("#nav-placeholder").load("nav.html");
-        });
-    </script>
-       <!-- End of Navigation bar -->
+    <nav>
+        <div class="topnav">
+            <a href="index.html"><img id="logo" src="imagens/logo.png"></a>
+            <a href="arquivo.html" class="pagina">ARQUIVO</a>
+            <a href="sobre.html" class="pagina">SOBRE</a>
+            <form id="search">
+                <input type="text" placeholder="Search..">
+                <div class="filtros">
+                    <select>
+                        <option class ="choice" onclick="filter('all')">All</option>
+                        <option class ="choice" onclick="filter('Porto')">Porto</option>
+                        <option class ="choice" onclick="filter('Évora')">Évora</option>
+                        <option class ="choice" onclick="filter('Coimbra')">Coimbra</option>
+                        <option class ="choice" onclick="filter('Herdados')">Herdados</option>
+                        <option class ="choice" onclick="filter('Criados')">Criados</option>
+                        <option class ="choice" onclick="filter('Ilegais')">Ilegais</option>
+                        <option class ="choice" onclick="filter('Roubados')">Roubados</option>
+                        <option class ="choice" onclick="filter('Achados')">Achados</option>
+                        <option class ="choice" onclick="filter('Placas')">Placas</option>
+                        <option class ="choice" onclick="filter('Comida')">Comida</option>
+                        <option class ="choice" onclick="filter('Decoração')">Decoração</option>
+                        <option class ="choice" onclick="filter('Animais')">Animais</option>
+                        <option class ="choice" onclick="filter('Sinais-Transito')">Sinais Transito</option>
+                    </select>
+                    <button type="button" class="sort"></button>
+                </div>
+            </form>
+        </div>
+    </nav>
 
 
     <div class="grid">
@@ -27,6 +45,24 @@
     </div>
 
     <script>
+
+        //FILTROS - FUNCIONA
+        function filter(value) {
+            console.log("filter: " + value);
+            const block = document.getElementsByClassName('container');
+            Array.from(block).forEach((element) => {
+                console.log(element.id);
+                if (value === "all") {
+                    element.classList.remove("hide");
+                } else if (element.id.includes(value)) {
+                    element.classList.remove("hide");
+                } else {
+                    element.classList.add("hide");
+                }
+
+
+            })
+        }
         document.addEventListener("DOMContentLoaded", function () {
             async function fetchProjectsJSON() {
                 const response = await fetch('https://api.cosmicjs.com/v3/buckets/deep-strange-web-production/objects?pretty=true&query=%7B%22type%22:%22images%22%7D&read_key=UaK6ewXkTXExUTsdEZU6sQiFdljWaO4azEp5fE9FfUX7T41VnH&depth=1&props=slug,title,metadata,id');
@@ -44,21 +80,30 @@
                     const title = projects[i].title;
                     console.log(i);
                     const link = `objeto.html?id=${objectId}`;
-
-                    grid.insertAdjacentHTML('beforeend', `<div class="container" title = "${title}"> <a href="${link}"><img src="${objectIcon}" alt="Project Image"><p>${title}</a></div>`);
+                    let stringCat= "";
+                    console.log(projects[i].metadata.categorias.length);
+                    for(let j = 0; j < projects[i].metadata.categorias.length; j++){
+                        stringCat += projects[i].metadata.categorias[j].title;
+                        stringCat += " ";
+                    }
+                    console.log(stringCat);
+                    grid.insertAdjacentHTML('beforeend', `<div class="container" title = "${title}" id="${stringCat}"> <a href="${link}"><img src="${objectIcon}" alt="Project Image"></a>${title}</div>`);
                 }
-
-                //SEARCH BAR - INCOMPLETO, NOT WORKING ATM
+                
+                sortThem('.grid', '.container');
+                //SEARCH BAR - FUNCIONA
                 const searchBar = document.forms['search'].querySelector('input');
-                const nome = document.getElementsByClassName("container").title;
+                console.log(searchBar);
+                const nome = document.getElementsByClassName("container");
                 console.log(nome);
 
                 searchBar.addEventListener('keyup', function (e) {
                     const search = e.target.value.toLowerCase();
-
+                    console.log(search);
                     Array.from(nome).forEach(function (obj) {
-                        const titulo = obj.firstElementChild.title;
-                        if (obj.toLowerCase().indexOf(search) != -1) {
+                        const titulo = obj.innerHTML.toLowerCase();
+                        console.log(titulo + " <- titulo | search ->  " + search);
+                        if (titulo.includes(search)) {
                             obj.style.display = 'block';
                         } else {
                             obj.style.display = 'none';
@@ -68,6 +113,33 @@
                 })
             });
 
+        });
+
+
+        //SORTING A-Z - FUNCIONA
+        const sortButton = document.querySelector('.sort');
+        let flag = false;
+
+        const sortThem = (name, selector) => {
+            const divs = [...document.querySelectorAll(".grid .container")];
+            divs.forEach(div => div.remove());
+
+            if (!flag) {
+                divs.sort((a, b) => (a.innerText > b.innerText) ? 1 : -1);
+
+                flag = !flag;
+            } else if (flag) {
+                divs.sort((a, b) => (a.innerText < b.innerText) ? 1 : -1);
+                flag = !flag;
+            }
+
+            divs.forEach(div => document.querySelector(".grid").append(div));
+
+        }
+
+
+        sortButton.addEventListener("click", function () {
+            sortThem('.grid', '.container');
         });
 
 
