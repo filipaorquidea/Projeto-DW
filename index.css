@@ -42,27 +42,27 @@
     }
 
       .primary0, .primary4{
-        animation: primaryA 4s linear infinite;
+        animation: primaryA 5s linear infinite;
       }
       
       .secondary0, .secondary4  {
-        animation: secondaryA 4s linear infinite;
+        animation: secondaryA 5s linear infinite;
       }
 
       .primary1, .primary3 {
-        animation: primaryB 3s linear infinite;
+        animation: primaryB 4s linear infinite;
       }
       
       .secondary1, .secondary3 {
-        animation: secondaryB 3s linear infinite;
+        animation: secondaryB 4s linear infinite;
       }
 
       .primary2, .primary5 {
-        animation: primaryA 6s linear infinite;
+        animation: primaryA 7s linear infinite;
       }
       
       .secondary2, .secondary5 {
-        animation: secondaryA 6s linear infinite;
+        animation: secondaryA 7s linear infinite;
       }
 
       
