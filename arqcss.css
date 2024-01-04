@@ -1,6 +1,6 @@
 @import url("nav.css");
 
-
+@media screen and (min-width: 768px) {
 .grid{
     padding-top: 10%;
     display: grid;
@@ -108,3 +108,21 @@ div[class = "container"] img{
     display:none;
   }
 /* End of Navigation Bar */
+
+}
+
+@media screen and (max-width: 767px) {
+  .grid {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 5px;
+      row-gap: 2px;
+      padding-top: 30%;
+      margin-left: 5px;
+      margin-right: 5px;
+  }
+
+  .container {
+      height: 50%; 
+      margin-bottom: 1%; 
+  }
+}

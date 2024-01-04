@@ -1,6 +1,6 @@
 @import url("nav.css");
 
-@media screen and (min-width: 780px) and (max-width: 1920px) {
+@media screen and (min-width: 768px) and (max-width: 1920px) {
 
   html,
   body {
@@ -13,10 +13,11 @@
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: 2fr 1fr 2fr;
     column-gap: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    top: 20vh;
   }
 
 
@@ -24,10 +25,9 @@
     display: block;
     position: relative;
     grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-end: 3;
     width: 30vw;
-    left: 20vw;
-    top: 20vh;
+    top: 10vh;
     object-fit: contain;
   }
 
@@ -36,26 +36,28 @@
     position: relative;
     grid-column-start: 1;
     grid-column-end: 2;
-    left: 20vw;
-    top: 25vh;
     text-align: right;
     font-weight: bold;
-    margin: 5%;
+    top: 30vh;
   }
 
-  .titulo{
-    font-size:25pt;
+  .titulo {
+    font-size: 25pt;
     padding: 2%;
   }
 
   .descricao {
     display: table-cell;
     position: relative;
-    grid-column-start: 4;
-    grid-column-end: 5;
-    left: 7vw;
-    top: 60vh;
+    grid-column-start: 3;
     vertical-align: bottom;
+    top: 50vh;
+  }
+
+  .back {
+    position: fixed;
+    bottom: 5vh;
+    left: 5vw;
   }
 
   .image-popup {
@@ -71,31 +73,130 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
-}
+  }
 
-.popup-img {
+  .popup-img {
     height: 100%;
     width: auto;
     transition: transform 0.25s ease;
     cursor: zoom-in;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 50pt;
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  input[type=checkbox]:checked~label>img {
+    transform: scale(2);
+    cursor: zoom-out;
+  }
+
 }
 
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
-  color: #fff;
-  font-size: 50pt;
-}
+@media screen and (max-width: 767px) {
 
-input[type=checkbox] {
-  display: none;
-}
+  html,
+  body {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    font-family: "Roboto Flex", sans-serif;
+  }
 
-input[type=checkbox]:checked ~ label > img {
-  transform: scale(2);
-  cursor: zoom-out;
-}
+  .grid {
+    display: block;
+    text-align: center;
+    margin: 0;
+    height: 10px;
+  }
 
+  .img1 {
+    width: 60%;
+    position: relative;
+    object-fit: contain;
+  }
+
+  .caracteristicas {
+    top: 0;
+  }
+
+  .descricao {
+    width: auto;
+    position: relative;
+    bottom: 20px;
+    text-align: left;
+    margin: 10px;
+  }
+
+  .titulo {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    top: 70px;
+  }
+
+  .ano,
+  .local {
+    width: auto;
+    position: relative;
+    text-align: left;
+    margin: 10px;
+  }
+
+  .back {
+    display: block;
+    position: relative;
+    top: 670px;
+    left: 35%;
+  }
+
+  .image-popup {
+    position: fixed;
+    top: 100vw;
+    left: 50vw;
+    width: 70vw;
+    height: 60vh;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+
+  .popup-img {
+    height: 100%;
+    width: auto;
+    transition: transform 0.25s ease;
+    cursor: zoom-in;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 50pt;
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  input[type=checkbox]:checked~label>img {
+    transform: scale(2);
+    cursor: zoom-out;
+  }
 }

@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Objeto</title>
     <link rel="stylesheet" href="objeto.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -35,6 +36,8 @@
 
     </div>
 
+    <img class="back" src="imagens/pngwing 1.png" onclick="goBack()">
+
     <script>
 
         let url = new URL(window.location);
@@ -51,10 +54,11 @@
             console.log(project); // fetched project
 
             const objectIcon = project.metadata && project.metadata.imagem !== null ? project.metadata.imagem.url : '';
+            const Icon = project.metadata && project.metadata.icone !== null ? project.metadata.icone.url : '';
 
             // Display the image on the page
             const imageContainer = document.querySelector('.image-container');
-            imageContainer.innerHTML = `<img src="${objectIcon}" alt="Project Image" width="300" height="500" class="img1" onclick="openImagePopup('${objectIcon}')">`;
+            imageContainer.innerHTML = `<img src="${objectIcon}" alt="Project Image" width="300" height="500" class="img1" onclick="openImagePopup('${Icon}')">`;
 
             // Update the content of 'descricao' with metadata.legenda
             const descricaoElement = document.querySelector('.descricao');
@@ -69,8 +73,9 @@
             caracteristicasElement.insertAdjacentHTML('beforeend', `<div class=ano><text>` + ano + `</text></div>`);
             caracteristicasElement.insertAdjacentHTML('beforeend', `<div class=local><text>` + local + `</text></div>`);
         });
+       
+        function openImagePopup(imageURL) {
 
-        function openImagePopup(imageUrl) {
             // Check if the popup is already open
             const existingPopup = document.querySelector('.image-popup');
             if (existingPopup) {
@@ -84,7 +89,7 @@
             popup.innerHTML = ` <input type="checkbox" id="zoomCheck">
                                  <span class="close-btn" onclick="closeImagePopup()">&times;</span>
                                  <label for="zoomCheck">
-                               <img src="${imageUrl}" alt="Popup Image" width="300" height="500" class="popup-img">
+                               <img src="${imageURL}" alt="Popup Image" width="300" height="500" class="popup-img">
                                </label>`;
 
             // Append the popup to the body
@@ -97,6 +102,10 @@
             if (popup) {
                 document.body.removeChild(popup);
             }
+        }
+
+        function goBack() {
+            window.history.back();
         }
 
     </script>
