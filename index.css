@@ -6,74 +6,115 @@
         width: 100%;
         height: 100%;
     }
-
-    .grid {
+    .gridmain{
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: auto auto auto auto auto auto;
         column-gap: 10px;
         margin-left: 10px;
         margin-right: 10px;
     }
-
-    .container1{
-        display: block;
+    .gridsub{
         position: relative;
         width: 100%;
-        height: 100vh;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        background-color: blue;
+        height: 100vh;  
+        
+        overflow-y: hidden;
+        
     }
 
-    .container2{
-        display: block;
+    .gridsub img{
+        display:block;
         position: relative;
-        width: 100%;
-        height: 100vh;
-        grid-column-start: 2;
-        grid-column-end: 3;
-        background-color: rgb(0, 255, 72);
+        left: 4vw;
+        width: 40%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .scroll {
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        display: flex; /* changed from inline-flex */
+        flex-direction: column; /* added this line */
+        justify-content: space-between;
     }
 
-    .container3{
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        grid-column-start: 3;
-        grid-column-end: 4;
-        background-color: rgb(255, 0, 204);
-    }
+      .primary0, .primary4{
+        animation: primaryA 4s linear infinite;
+      }
+      
+      .secondary0, .secondary4  {
+        animation: secondaryA 4s linear infinite;
+      }
 
-    .container4{
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        grid-column-start: 4;
-        grid-column-end: 5;
-        background-color: rgb(255, 72, 0);
-    }
+      .primary1, .primary3 {
+        animation: primaryB 3s linear infinite;
+      }
+      
+      .secondary1, .secondary3 {
+        animation: secondaryB 3s linear infinite;
+      }
 
-    .container5{
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        grid-column-start: 5;
-        grid-column-end: 6;
-        background-color: rgb(200, 0, 255);
-    }
+      .primary2, .primary5 {
+        animation: primaryA 6s linear infinite;
+      }
+      
+      .secondary2, .secondary5 {
+        animation: secondaryA 6s linear infinite;
+      }
 
-    .container6{
+      
+      @keyframes primaryA{
+        from {
+          top: 0vh;
+        }
+        to {
+          top: -100vh;
+        }
+      }
+      
+      @keyframes secondaryA {
+        from {
+          top: 100vh;
+        }
+        to {
+          top: 0vh;
+        }
+      }
+
+      @keyframes primaryB{
+        from {
+          top: -100vh;
+        }
+        to {
+          top: 0vh;
+        }
+      }
+      
+      @keyframes secondaryB {
+        from {
+          top: 0vh;
+        }
+        to {
+          top: 100vh;
+        }
+      }
+
+
+      #enter{
+        position: absolute;
         display: block;
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        grid-column-start: 6;
-        grid-column-end: 6;
-        background-color: rgb(13, 18, 14);
-    }
+        z-index: 1;
+        width:10vw;
+        height:auto;
+        left: 44vw;
+        top: 44vh;     
+      }
+      
+    
+
 }
 
 @media screen and (max-width: 780px){

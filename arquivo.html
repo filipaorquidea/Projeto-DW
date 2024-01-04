@@ -18,7 +18,7 @@
             <form id="search">
                 <input type="text" placeholder="Search..">
                 <div class="filtros">
-                    <select>
+                    <select id="selections">
                         <option class ="choice" onclick="filter('all')">All</option>
                         <option class ="choice" onclick="filter('Porto')">Porto</option>
                         <option class ="choice" onclick="filter('Évora')">Évora</option>
@@ -46,6 +46,13 @@
     </div>
 
     <script>
+         function clearSelected(){
+            var elements = document.getElementById("selections").options;
+
+            for(var i = 0; i < elements.length; i++){
+            elements[i].selected = false;
+            }
+        }
 
         //FILTROS - FUNCIONA
         function filter(value) {
@@ -99,15 +106,16 @@
                 console.log(nome);
 
                 searchBar.addEventListener('keyup', function (e) {
+                    clearSelected();
                     const search = e.target.value.toLowerCase();
                     console.log(search);
                     Array.from(nome).forEach(function (obj) {
                         const titulo = obj.innerHTML.toLowerCase();
                         console.log(titulo + " <- titulo | search ->  " + search);
                         if (titulo.includes(search)) {
-                            obj.style.display = 'block';
+                            obj.classList.remove("hide");
                         } else {
-                            obj.style.display = 'none';
+                            obj.classList.add("hide");
                         }
                     })
 
