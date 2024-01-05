@@ -9,7 +9,20 @@
 </head>
 
 <body>
-
+    <div class="main">
+    <div class="hamIcon" onclick="toggleClass()">
+        <img src="imagens/logo.png" id="ham">
+    </div>
+    <nav class="hamburguer">
+        <ul class="menu">
+            <li><a href="arquivo.html" onclick="toggleClass()">ARQUIVO</a></li>
+            <li></li>
+            <li><a href="sobre.html" onclick="toggleClass()">SOBRE</a></li>
+            <li></li>
+            <li><a href="index.html" onclick="toggleClass()">HOME</a></li>
+        </ul>
+    </nav>
+    </div>
 
     <div class="gridmain">
 
@@ -38,9 +51,9 @@
             <div class="scroll secondary5"></div>
         </div>
 
-        
-        <a href="arquivo.html"><img id="enter" src="imagens/logo.png"></a> 
-        </div>
+
+        <a href="arquivo.html"><img id="enter" src="imagens/logo.png"></a>
+    </div>
     </div>
 
 
@@ -77,6 +90,23 @@
 
             })
         })
+
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.className += " hidden";
+        });
+
+        //Adicionar EventListener para desaparecer a sidebar
+
+        window.addEventListener("click", function () {
+            const main = document.querySelector(".main");
+            main.className = "main";
+        })
+
+        function toggleClass() {
+            let menu = document.querySelector(".menu");
+            menu.classList.toggle("toggleCls");
+        }
 
     </script>
 

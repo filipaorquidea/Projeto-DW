@@ -1,166 +1,314 @@
-@media screen and (min-width: 780px) and (max-width: 1920px) {
+@media screen and (min-width: 768px) and (max-width: 1920px) {
 
-    html,
-    body {
-        display: contents;
-        width: 100%;
-        height: 100%;
+  html,
+  body {
+    display: contents;
+    width: 100%;
+    height: 100%;
+  }
+
+  .main {
+    display: none;
+  }
+
+  .hamIcon {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .gridmain {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    column-gap: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .gridsub {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    overflow-y: hidden;
+
+  }
+
+  .gridsub img {
+    display: block;
+    position: relative;
+    left: 4vw;
+    width: 40%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .scroll {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    display: flex;
+    /* changed from inline-flex */
+    flex-direction: column;
+    /* added this line */
+    justify-content: space-between;
+  }
+
+  .primary0,
+  .primary4 {
+    animation: primaryA 5s linear infinite;
+  }
+
+  .secondary0,
+  .secondary4 {
+    animation: secondaryA 5s linear infinite;
+  }
+
+  .primary1,
+  .primary3 {
+    animation: primaryB 4s linear infinite;
+  }
+
+  .secondary1,
+  .secondary3 {
+    animation: secondaryB 4s linear infinite;
+  }
+
+  .primary2,
+  .primary5 {
+    animation: primaryA 7s linear infinite;
+  }
+
+  .secondary2,
+  .secondary5 {
+    animation: secondaryA 7s linear infinite;
+  }
+
+
+  @keyframes primaryA {
+    from {
+      top: 0vh;
     }
-    .gridmain{
-        display: grid;
-        grid-template-columns: auto auto auto auto auto auto;
-        column-gap: 10px;
-        margin-left: 10px;
-        margin-right: 10px;
+
+    to {
+      top: -100vh;
     }
-    .gridsub{
-        position: relative;
-        width: 100%;
-        height: 100vh;  
-        
-        overflow-y: hidden;
-        
+  }
+
+  @keyframes secondaryA {
+    from {
+      top: 100vh;
     }
 
-    .gridsub img{
-        display:block;
-        position: relative;
-        left: 4vw;
-        width: 40%;
-        height: 100%;
-        object-fit: contain;
+    to {
+      top: 0vh;
     }
-    .scroll {
-        width: inherit;
-        height: inherit;
-        position: absolute;
-        left: 0%;
-        top: 0%;
-        display: flex; /* changed from inline-flex */
-        flex-direction: column; /* added this line */
-        justify-content: space-between;
+  }
+
+  @keyframes primaryB {
+    from {
+      top: -100vh;
     }
 
-      .primary0, .primary4{
-        animation: primaryA 5s linear infinite;
-      }
-      
-      .secondary0, .secondary4  {
-        animation: secondaryA 5s linear infinite;
-      }
+    to {
+      top: 0vh;
+    }
+  }
 
-      .primary1, .primary3 {
-        animation: primaryB 4s linear infinite;
-      }
-      
-      .secondary1, .secondary3 {
-        animation: secondaryB 4s linear infinite;
-      }
+  @keyframes secondaryB {
+    from {
+      top: 0vh;
+    }
 
-      .primary2, .primary5 {
-        animation: primaryA 7s linear infinite;
-      }
-      
-      .secondary2, .secondary5 {
-        animation: secondaryA 7s linear infinite;
-      }
-
-      
-      @keyframes primaryA{
-        from {
-          top: 0vh;
-        }
-        to {
-          top: -100vh;
-        }
-      }
-      
-      @keyframes secondaryA {
-        from {
-          top: 100vh;
-        }
-        to {
-          top: 0vh;
-        }
-      }
-
-      @keyframes primaryB{
-        from {
-          top: -100vh;
-        }
-        to {
-          top: 0vh;
-        }
-      }
-      
-      @keyframes secondaryB {
-        from {
-          top: 0vh;
-        }
-        to {
-          top: 100vh;
-        }
-      }
+    to {
+      top: 100vh;
+    }
+  }
 
 
-      #enter{
-        position: absolute;
-        display: block;
-        z-index: 1;
-        width:10vw;
-        height:auto;
-        left: 44vw;
-        top: 44vh;     
-      }
-      
-    
+  #enter {
+    position: absolute;
+    display: block;
+    z-index: 1;
+    width: 10vw;
+    height: auto;
+    left: 44vw;
+    top: 44vh;
+  }
 
 }
 
-@media screen and (max-width: 780px){
+@media screen and (max-width: 767px) {
 
-   
-    html,
-    body {
-        display: contents;
-        width: 100%;
-        height: 100%;
+
+  html,
+  body {
+    display: contents;
+    width: 100%;
+    height: 100%;
+  }
+
+  .main {
+    display: inline;
+    position: relative;
+    z-index: 1;
+    bottom: 5px;
+  }
+
+  .hamIcon {
+    display: block;
+    position: fixed;
+    float: left;
+    cursor: pointer;
+    color: black;
+    z-index: 3;
+  }
+
+  .hamIcon img{
+    width: 40%;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.toggleCls {
+    display: block;
+    list-style: none;
+    position: fixed;
+    background-color: gray;
+    margin-top: 0;
+    padding-top: 40vh;
+    width: 100%;
+    height: 100vh;
+    transition: 5s opacity ease-in-out;
+    z-index: 2;
+
+  }
+
+  nav ul li a {
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .gridmain {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .gridsub {
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    overflow-y: hidden;
+    top: 50px;
+  }
+
+  .gridsub img {
+    display: block;
+    position: relative;
+    left: 4vw;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  #enter {
+    display: none;
+  }
+
+  .scroll {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    display: flex;
+    /* changed from inline-flex */
+    flex-direction: column;
+    /* added this line */
+    justify-content: space-between;
+  }
+
+  .primary0,
+  .primary4 {
+    animation: primaryA 5s linear infinite;
+  }
+
+  .secondary0,
+  .secondary4 {
+    animation: secondaryA 5s linear infinite;
+  }
+
+  .primary1,
+  .primary3 {
+    animation: primaryB 4s linear infinite;
+  }
+
+  .secondary1,
+  .secondary3 {
+    animation: secondaryB 4s linear infinite;
+  }
+
+  .primary2,
+  .primary5 {
+    animation: primaryA 7s linear infinite;
+  }
+
+  .secondary2,
+  .secondary5 {
+    animation: secondaryA 7s linear infinite;
+  }
+
+
+  @keyframes primaryA {
+    from {
+      top: 0vh;
     }
 
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 10px;
+    to {
+      top: -100vh;
+    }
+  }
+
+  @keyframes secondaryA {
+    from {
+      top: 100vh;
     }
 
-    .container1{
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        background-color: blue;
+    to {
+      top: 0vh;
+    }
+  }
+
+  @keyframes primaryB {
+    from {
+      top: -100vh;
     }
 
-    .container2{
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        grid-column-start: 2;
-        grid-column-end: 3;
-        background-color: rgb(0, 255, 72);
+    to {
+      top: 0vh;
+    }
+  }
+
+  @keyframes secondaryB {
+    from {
+      top: 0vh;
     }
 
-    .container3{
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        grid-column-start: 3;
-        grid-column-end: 4;
-        background-color: rgb(255, 0, 204);
-    } 
-    
+    to {
+      top: 100vh;
+    }
+  }
+
 }
