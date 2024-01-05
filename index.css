@@ -166,10 +166,14 @@
     cursor: pointer;
     color: black;
     z-index: 3;
+    height: 15vh;
+    top: 40vh;
+    left: 20vw;
   }
 
   .hamIcon img{
-    width: 40%;
+    width: 100%;
+    object-fit: cover;
   }
 
   .menu {
@@ -211,7 +215,7 @@
     width: 80%;
     height: 100vh;
     overflow-y: hidden;
-    top: 50px;
+    top:0;
   }
 
   .gridsub img {

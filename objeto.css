@@ -114,12 +114,13 @@
     position: relative;
     text-align: center;
     height: 10px;
-    top: 80px;
+    top:25vh;
   }
 
   .img1 {
     width: 50%;
     height: auto;
+    margin: 5%;
   }
 
   .caracteristicas {
