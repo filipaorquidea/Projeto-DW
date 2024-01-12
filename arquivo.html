@@ -83,7 +83,7 @@
 
                 const grid = document.querySelector('.grid');
                 for (let i = 0; i < projects.length; i++) {
-                    const objectIcon = projects[i].metadata && projects[i].metadata.imagem !== null ? projects[i].metadata.imagem.url : ''; // Assuming the URL of the image is in the 'icon' property of the metadata
+                    const objectIcon = projects[i].metadata && projects[i].metadata.icone !== null ? projects[i].metadata.icone.url : ''; // Assuming the URL of the image is in the 'icon' property of the metadata
                     const objectId = projects[i].id;
                     const title = projects[i].title;
                     console.log(i);
